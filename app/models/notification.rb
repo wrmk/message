@@ -10,13 +10,13 @@ class Notification < ApplicationRecord
    if !check_value(interval) or !check_value(count) then abort("Введите корректные значения интервала и количества сообщений") end
     
     (1..count).each do |i|
-      message = Faker::Fantasy::Tolkien.poem
+      text = Faker::Fantasy::Tolkien.poem
       create_time = DateTime.now
       @send_time = ''
       @delivery_time = ''
 
       uri = URI('http://www.example.com/')
-      res = Net::HTTP.post_form(uri, 'q' => message, 'max' => '50')
+      res = Net::HTTP.post_form(uri, 'q' => text, 'max' => '50')
       
 
       @send_time = DateTime.now
