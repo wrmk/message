@@ -13,10 +13,9 @@
 ActiveRecord::Schema.define(version: 2021_06_20_164211) do
 
   create_table "notifications", force: :cascade do |t|
+    t.datetime "create_at"
     t.datetime "sent_at"
     t.datetime "confirmed_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
